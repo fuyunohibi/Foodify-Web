@@ -2,6 +2,7 @@
 
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { FloatingDockTabs } from "@/components/ui/floating-dock-tabs";
+import { Logo } from "@/components/ui/logo";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";
@@ -19,8 +20,12 @@ const HomePage = () => {
         }}
         className="relative flex flex-1 w-screen flex-col gap-4 p-10"
       >
-        <div className="text-xl md:text-2xl font-bold dark:text-white text-left">
-          The Taste of Yesterday
+        <Logo />
+        <div className="mt-[5rem]">
+          <p className="text-lg font-bold text-white">Categories</p>
+        </div>
+        <div className="mt-[8rem]">
+          <p className="text-lg font-bold text-white">Popular</p>
         </div>
       </motion.div>
       <FloatingDockTabs />
