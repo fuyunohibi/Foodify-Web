@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "../globals.css";
 import { cn } from "@/utils/cn";
 import LeftSidebar from "@/components/shared/left-sidebar";
+import { AuroraBackground } from "@/components/ui/aurora-background";
+import { motion } from "framer-motion";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,10 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn('flex h-screen p-4 space-x-4 bg-primary-100', inter.className)}>
-        <LeftSidebar />
+      <body className={cn("", inter.className)}>
+        {/* <LeftSidebar /> */}
         {children}
-        </body>
+      </body>
     </html>
   );
 }

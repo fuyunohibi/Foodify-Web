@@ -1,17 +1,33 @@
+"use client";
+
+import { AuroraBackground } from "@/components/ui/aurora-background";
+import { motion } from "framer-motion";
+
 const HomePage = () => {
   return (
-    <section className=" bg-secondary-200 flex flex-col w-full h-full rounded-[3rem]">
-      <div className="flex flex-row justify-between items-center px-4 py-2">
-        <h1 className="text-2xl font-bold text-primary-200">Search</h1>
-      </div>
-      <div className="flex flex-row justify-between items-center px-4 py-2">
-        <h1 className="text-2xl font-bold text-primary-200">Popular</h1>
-      </div>
-      <div className="flex flex-row justify-between items-center px-4 py-2">
-        <h1 className="text-2xl font-bold text-primary-200">For you</h1>
-      </div>
-    </section>
+    <AuroraBackground>
+      <motion.div
+        initial={{ opacity: 0.0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.3,
+          duration: 0.8,
+          ease: "easeInOut",
+        }}
+        className="relative flex flex-col gap-4 items-center justify-center px-4"
+      >
+        <div className="text-3xl md:text-7xl font-bold dark:text-white text-center">
+          The Taste of Yesterday
+        </div>
+        <div className="font-extralight text-base md:text-xl dark:text-neutral-200 py-4">
+          Write down your recipes and share them with the world.
+        </div>
+        <button className="bg-black dark:bg-white rounded-full w-fit text-white dark:text-black px-4 py-2">
+          Get Started
+        </button>
+      </motion.div>
+    </AuroraBackground>
   );
-}
+};
 
-export default HomePage
+export default HomePage;

@@ -6,8 +6,8 @@ export const leftSidebarLinks = [
   },
   {
     icon: "write-icon",
-    route: "/write",
-    label: "Write a recipe",
+    route: "/add-recipe",
+    label: "Add a recipe",
   },
 
 ];
