@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    domains: ["assets.aceternity.com"], // Add your allowed external domain
+  },
+};
 
-export default nextConfig;
+export default nextConfig; // Use export instead of module.exports

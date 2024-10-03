@@ -2,8 +2,9 @@
 
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
-const HomePage = () => {
+const IntroductionPage = () => {
   return (
     <AuroraBackground>
       <motion.div
@@ -22,12 +23,14 @@ const HomePage = () => {
         <div className="font-extralight text-base md:text-xl dark:text-neutral-200 py-4">
           Write down your recipes and share them with the world.
         </div>
-        <button className="bg-black dark:bg-white rounded-full w-fit text-white dark:text-black px-4 py-2">
-          Get Started
-        </button>
+        <Link href="/home">
+          <button className="bg-black dark:bg-white rounded-full w-fit text-white dark:text-black px-4 py-2 transition-all duration-500 hover:bg-gray-800 dark:hover:bg-gray-300 hover:scale-105">
+            Get Started
+          </button>
+        </Link>
       </motion.div>
     </AuroraBackground>
   );
 };
 
-export default HomePage;
+export default IntroductionPage;
