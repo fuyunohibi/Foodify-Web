@@ -7,7 +7,15 @@ import { Logo } from "@/components/ui/logo";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const HomePage = () => {
+interface IParams {
+  params: {
+    id: string;
+  };
+}
+
+const ReceipesPage = ({ params }: IParams) => {
+
+  console.log("ID:", params.id);
   return (
     <AuroraBackground>
       <motion.div
@@ -20,15 +28,12 @@ const HomePage = () => {
         }}
         className="relative flex flex-1 w-screen flex-col gap-4 p-10 min-h-screen"
       >
-        <Logo />
-        <div className="-mt-[8rem]">
-          <p className="text-lg font-bold text-white">Categories</p>
-          <CategoriesTabs />
-        </div>
+        <p className="text-lg font-bold text-white">Recipe</p>
+        <p className="text-lg font-bold text-white">{params.id}</p>
       </motion.div>
       <FloatingDockTabs />
     </AuroraBackground>
   );
 };
 
-export default HomePage;
+export default ReceipesPage;

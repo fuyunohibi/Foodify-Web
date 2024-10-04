@@ -4,7 +4,7 @@ import { SparklesCore } from "../ui/sparkles";
 
 export function Logo() {
   return (
-    <div className="h-[10rem] w-[30rem] flex flex-col items-center justify-center overflow-hidden rounded-md absolute -left-[4rem] top-10">
+    <div className="-ml-[7rem] w-[30rem] flex flex-col items-center justify-center overflow-hidden rounded-md">
       <h1 className="text-xl md:text-2xl font-bold text-center text-white relative z-20">
         The Taste of Yesterday
       </h1>

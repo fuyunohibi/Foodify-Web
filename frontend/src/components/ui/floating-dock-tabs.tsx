@@ -33,9 +33,9 @@ export function FloatingDockTabs() {
     },
   ];
   return (
-    <div className="flex items-center justify-center h-[12rem] w-full ">
+    <div className="fixed flex items-center justify-center h-[12rem] w-full -bottom-[4rem]">
       <FloatingDock
-        mobileClassName="translate-y-10 translate-x-40" // only for demo, remove for production
+        mobileClassName="-translate-y-10 translate-x-[12rem]" // only for demo, remove for production
         items={links}
       />
     </div>
