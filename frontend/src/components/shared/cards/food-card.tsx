@@ -1,10 +1,3 @@
-interface FoodCardProps {
-  title: string;
-  calories: number;
-  grams: number;
-  category: string;
-  image: string;
-}
 
 import Image from "next/image";
 import { FollowerPointerCard } from "@/components/ui/following-pointer";
@@ -15,6 +8,14 @@ import {
   IconTimeDuration0,
 } from "@tabler/icons-react";
 import Link from "next/link";
+
+interface FoodCardProps {
+  title: string;
+  calories: number;
+  grams: number;
+  category: string;
+  image: string;
+}
 
 interface FoodCard {
   recipe: {
@@ -44,17 +45,15 @@ export function FoodCard({ recipe }: FoodCard) {
             />
           }
         >
-          <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
-            <div className="w-full aspect-w-16 aspect-h-10 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden xl:aspect-w-16 xl:aspect-h-10 relative">
-              <Image
-                src={recipe.image}
-                alt="thumbnail"
-                layout="fill"
-                objectFit="cover"
-                className={`group-hover:scale-95 group-hover:rounded-2xl transform object-cover transition duration-200 `}
-              />
-            </div>
-            <div className=" p-4">
+          <div className="flex flex-col relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
+            <Image
+              src={recipe.image}
+              alt="thumbnail"
+              layout="fill"
+              objectFit="cover"
+              className={`group-hover:scale-95 group-hover:rounded-2xl transform object-cover transition duration-200`}
+            />
+            <div className="flex flex-col p-4 relative z-10">
               <h2 className="font-bold my-4 text-lg text-zinc-700">
                 {recipe.title}
               </h2>
@@ -63,15 +62,15 @@ export function FoodCard({ recipe }: FoodCard) {
               </h2>
               <div className="flex flex-row justify-start items-center gap-1 mt-10">
                 <div className="relative z-10 h-8 flex flex-row justify-center items-center gap-1 px-6 py-2 glassmorphism text-black font-bold rounded-[3rem] text-xs">
-                  <IconClock className="h-[18px] w-[18px] text-neutral-500 dark:text-neutral-300" />
+                  <IconClock className="h-[18px] w-[18px] text-yellow-300" />
                   {recipe.duration}
                 </div>
                 <div className="relative z-10 h-8 flex flex-row justify-center items-center gap-1 px-6 py-2 glassmorphism text-black font-bold rounded-[3rem] text-xs">
-                  <IconStar className="h-[18px] w-[18px] text-neutral-500 dark:text-neutral-300" />
+                  <IconStar className="h-[18px] w-[18px] text-yellow-300" />
                   {recipe.level}
                 </div>
                 <div className="relative z-10 h-8 flex flex-row justify-center items-center gap-1 px-6 py-2 glassmorphism text-black font-bold rounded-[3rem] text-xs">
-                  <IconFlame className="h-[20px] w-[20px] text-neutral-500 dark:text-neutral-300" />
+                  <IconFlame className="h-[20px] w-[20px] text-yellow-300" />
                   {recipe.calories}&nbsp;kcal
                 </div>
               </div>
@@ -90,11 +89,18 @@ const TitleComponent = ({
   title: string;
   avatar: string;
 }) => (
-  <div className="flex space-x-2 items-center">
-    <Image
+  <div className="flex space-x-2 items-center rounded-full overflow-hidden">
+    {/* <Image
       src={avatar}
       height="20"
       width="20"
+      alt="thumbnail"
+      className="rounded-full border-2 border-white"
+    /> */}
+    <Image
+      src="/assets/images/avatars/gordon.webp"
+      height={20}
+      width={20}
       alt="thumbnail"
       className="rounded-full border-2 border-white"
     />

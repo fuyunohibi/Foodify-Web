@@ -8,7 +8,8 @@ export const recipes = [
     level: "Easy",
     duration: "45 mins",
     calories: 600,
-    image: "/demo/thumbnail.png",
+    image:
+      "https://images.unsplash.com/photo-1516100882582-96c3a05fe590?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Unsplash image
     authorAvatar: "/manu.png",
     steps: [
       "Preheat the oven to 200°C.",
@@ -27,7 +28,7 @@ export const recipes = [
     level: "Medium",
     duration: "30 mins",
     calories: 450,
-    image: "/recipes/spaghetti-carbonara.png",
+    image: "https://source.unsplash.com/1600x900/?spaghetti,carbonara", // Unsplash image
     authorAvatar: "/avatars/jane.png",
     steps: [
       "Boil the spaghetti until al dente.",
@@ -45,7 +46,7 @@ export const recipes = [
     level: "Easy",
     duration: "25 mins",
     calories: 500,
-    image: "/recipes/margherita.png",
+    image: "https://source.unsplash.com/1600x900/?margherita,pizza", // Unsplash image
     authorAvatar: "/avatars/mario.png",
     steps: [
       "Prepare the pizza dough.",
@@ -64,7 +65,7 @@ export const recipes = [
     level: "Easy",
     duration: "20 mins",
     calories: 300,
-    image: "/recipes/stirfry.png",
+    image: "https://source.unsplash.com/1600x900/?vegetable,stir-fry", // Unsplash image
     authorAvatar: "/avatars/anna.png",
     steps: [
       "Chop vegetables of your choice.",
@@ -83,7 +84,7 @@ export const recipes = [
     level: "Medium",
     duration: "50 mins",
     calories: 700,
-    image: "/recipes/beef-stroganoff.png",
+    image: "https://source.unsplash.com/1600x900/?beef,stroganoff", // Unsplash image
     authorAvatar: "/avatars/tom.png",
     steps: [
       "Slice beef and sauté in a pan.",
@@ -101,7 +102,7 @@ export const recipes = [
     level: "Hard",
     duration: "30 mins",
     calories: 450,
-    image: "/recipes/chocolate-lava.png",
+    image: "https://source.unsplash.com/1600x900/?chocolate,lava-cake", // Unsplash image
     authorAvatar: "/avatars/emily.png",
     steps: [
       "Melt chocolate and butter together.",
@@ -119,7 +120,7 @@ export const recipes = [
     level: "Medium",
     duration: "1 hour",
     calories: 600,
-    image: "/recipes/tikka-masala.png",
+    image: "https://source.unsplash.com/1600x900/?chicken,tikka-masala", // Unsplash image
     authorAvatar: "/avatars/chris.png",
     steps: [
       "Marinate chicken in yogurt and spices.",
@@ -138,7 +139,7 @@ export const recipes = [
     level: "Easy",
     duration: "15 mins",
     calories: 350,
-    image: "/recipes/caesar-salad.png",
+    image: "https://source.unsplash.com/1600x900/?caesar,salad", // Unsplash image
     authorAvatar: "/avatars/laura.png",
     steps: [
       "Toss romaine lettuce with Caesar dressing.",
@@ -156,7 +157,7 @@ export const recipes = [
     level: "Easy",
     duration: "25 mins",
     calories: 400,
-    image: "/recipes/grilled-salmon.png",
+    image: "https://source.unsplash.com/1600x900/?salmon,grilled", // Unsplash image
     authorAvatar: "/avatars/david.png",
     steps: [
       "Season the salmon with salt and pepper.",
@@ -174,7 +175,7 @@ export const recipes = [
     level: "Medium",
     duration: "1 hour",
     calories: 500,
-    image: "/recipes/french-onion-soup.png",
+    image: "https://source.unsplash.com/1600x900/?french,onion-soup", // Unsplash image
     authorAvatar: "/avatars/sophia.png",
     steps: [
       "Caramelize onions in a pot over low heat.",
