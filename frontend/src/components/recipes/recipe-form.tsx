@@ -36,7 +36,7 @@ const RecipeForm = ({ onSubmit }: RecipeFormProps) => {
       onSubmit={handleSubmit(onSubmit)}
       className=" bg-white/30 p-8 rounded-xl shadow-lg w-full max-w-4xl mx-auto backdrop-blur-xl border border-gray-200"
     >
-      <label className="text-3xl font-bold mb-8 flex justify-center items-center bg-gradient-to-r from-indigo-700 to-purple-500 bg-clip-text text-transparent">
+      <label className="text-3xl font-bold mb-8 flex justify-center items-center bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
         Add Your Exquisite Recipe
       </label>
 
@@ -185,7 +185,7 @@ const RecipeForm = ({ onSubmit }: RecipeFormProps) => {
         <button
           type="button"
           onClick={() => append("")}
-          className="mt-3 text-white hover:underline focus:outline-none bg-gradient-to-r from-indigo-500 to-purple-600 px-4 py-2 rounded-lg"
+          className="mt-3 text-white hover:underline focus:outline-none bg-gradient-to-r from-gray-700 to-gray-900 px-4 py-2 rounded-lg"
         >
           + Add Another Step
         </button>
@@ -194,7 +194,7 @@ const RecipeForm = ({ onSubmit }: RecipeFormProps) => {
       {/* Submit Button */}
       <button
         type="submit"
-        className="w-full p-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:from-indigo-600 hover:to-purple-700 transition duration-300"
+        className="w-full p-4 bg-gradient-to-r from-gray-700 to-gray-900 text-white font-semibold rounded-xl shadow-lg hover:from-gray-700 hover:to-black hover:scale-105 transition duration-500"
       >
         Add Recipe
       </button>

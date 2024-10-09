@@ -16,7 +16,6 @@ export function FloatingDockTabs() {
       ),
       href: "/home",
     },
-
     {
       title: "Profile",
       icon: (

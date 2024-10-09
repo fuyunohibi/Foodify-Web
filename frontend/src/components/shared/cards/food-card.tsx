@@ -1,10 +1,3 @@
-interface FoodCardProps {
-  title: string;
-  calories: number;
-  grams: number;
-  category: string;
-  image: string;
-}
 
 import Image from "next/image";
 import { FollowerPointerCard } from "@/components/ui/following-pointer";
@@ -15,6 +8,14 @@ import {
   IconTimeDuration0,
 } from "@tabler/icons-react";
 import Link from "next/link";
+
+interface FoodCardProps {
+  title: string;
+  calories: number;
+  grams: number;
+  category: string;
+  image: string;
+}
 
 interface FoodCard {
   recipe: {
@@ -88,11 +89,18 @@ const TitleComponent = ({
   title: string;
   avatar: string;
 }) => (
-  <div className="flex space-x-2 items-center">
-    <Image
+  <div className="flex space-x-2 items-center rounded-full overflow-hidden">
+    {/* <Image
       src={avatar}
       height="20"
       width="20"
+      alt="thumbnail"
+      className="rounded-full border-2 border-white"
+    /> */}
+    <Image
+      src="/assets/images/avatars/gordon.webp"
+      height={20}
+      width={20}
       alt="thumbnail"
       className="rounded-full border-2 border-white"
     />
