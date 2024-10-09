@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["assets.aceternity.com"], // Add your allowed external domain
+    unoptimized: true, // This disables all restrictions on image optimization
   },
 };
 
