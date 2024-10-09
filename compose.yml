@@ -13,6 +13,7 @@ services:
       - DATABASE_URL=postgresql://postgres:postgres@db:5432/postgres
       - FLASK_APP=app.py
       - FLASK_ENV=development
+      - SECRET_KEY=272cc5c5eb8f6925f17400ff1e8307c9
 
   db:
     container_name: db
