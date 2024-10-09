@@ -95,19 +95,27 @@ def generate_token(user):
     return token
 
 
-# User authentication routes
 @app.route("/auth/signup", methods=["POST"])
 def signup():
     data = request.json
+    email = data["email"]
+
+    existing_user = User.query.filter_by(email=email).first()
+
+    if existing_user:
+        return jsonify({"error": "Email already exists!"}), 400
+
     hashed_password = generate_password_hash(data["password"], method="sha256")
 
     new_user = User(
-        email=data["email"],
+        email=email,
         username=data["username"],
         password=hashed_password,
     )
+
     db.session.add(new_user)
     db.session.commit()
+
     return jsonify(new_user.json()), 201
 
 
