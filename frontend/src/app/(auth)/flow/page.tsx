@@ -85,7 +85,7 @@ const FlowPage = () => {
                 </p>
                 <button
                   onClick={handleToggleAuth}
-                  className="border-2 border-white py-2 px-6 text-white rounded-lg hover:bg-white hover:text-black transition-all duration-500"
+                  className="border-2 border-white py-2 px-6 text-white rounded-3xl hover:bg-white hover:text-black transition-all duration-500"
                 >
                   {signIn ? "Sign Up" : "Log In"}
                 </button>

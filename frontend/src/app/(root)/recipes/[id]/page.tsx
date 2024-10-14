@@ -15,13 +15,13 @@ interface IParams {
 }
 
 interface Recipe {
+  id: number;
   author: string;
   authorAvatar: string;
   calories: number;
   date: string;
   description: string;
   duration: string;
-  id: number;
   image: string;
   level: string;
   steps: string[];
@@ -32,12 +32,18 @@ interface StepProps {
   text: string;
 }
 
-const Step: React.FC<StepProps> = ({ text }) => {
+const Step = ({ text }: StepProps) => {
   const [isDone, setIsDone] = useState(false);
   console.log(isDone);
   return (
-    <div onClick={() => setIsDone(d => !d)}>
-      <a className={`text-md font-medium cursor-pointer ${isDone ? 'line-through text-red-400' : ''}`}>{text}</a>
+    <div onClick={() => setIsDone((d) => !d)}>
+      <a
+        className={`text-md font-medium cursor-pointer ${
+          isDone ? "line-through text-red-400" : ""
+        }`}
+      >
+        {text}
+      </a>
     </div>
   );
 };

@@ -37,7 +37,7 @@ export default function SignInForm() {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="mt-2 mb-4 w-full p-3 rounded-lg border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="mt-2 mb-4 w-full p-3 rounded-xl border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
         />
         <label className="text-lg font-medium text-gray-900">
           Password
@@ -47,10 +47,10 @@ export default function SignInForm() {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="mt-2 mb-4 w-full p-3 rounded-lg border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="mt-2 mb-4 w-full p-3 rounded-xl border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
         />
         <Link href={"/home"}>
-          <button className="mt-6 py-2 px-6 bg-gradient-to-tr from-gray-700 to-gray-900 text-white rounded-lg font-bold w-full transition-all duration-500 hover:from-gray-700 hover:to-black hover:scale-105">
+          <button className="mt-6 py-3 px-6 bg-gradient-to-tr from-gray-700 to-gray-900 text-white rounded-3xl font-bold w-full transition-all duration-500 hover:from-gray-700 hover:to-black hover:scale-105">
             Log in
           </button>
         </Link>
