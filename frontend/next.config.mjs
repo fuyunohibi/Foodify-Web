@@ -2,7 +2,7 @@
 const nextConfig = {
   images: {
     unoptimized: true, // This disables all restrictions on image optimization
-    output: 'standalone',
+    // output: 'standalone',
   },
 };
 

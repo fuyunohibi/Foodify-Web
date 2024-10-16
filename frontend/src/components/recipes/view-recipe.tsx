@@ -52,7 +52,7 @@ const RecipeDetails = ({ id }: RecipeDetailsProps) => {
   useEffect(() => {
     const fetchRecipe = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/recipes/${id}`);
+        const res = await fetch(`http://localhost:5001/recipes/${id}`);
         const data: Recipe = await res.json();
         setRecipe(data);
       } catch (error) {
@@ -80,10 +80,13 @@ const RecipeDetails = ({ id }: RecipeDetailsProps) => {
         className="relative flex flex-1 w-screen flex-col gap-4 p-10 min-h-screen text-black items-center mb-16"
       >
         <div className="flex items-center flex-col space-y-4">
-          <h1 className=" font-bold text-4xl">{recipe.title}</h1>
+          <h1 className="font-bold text-4xl">{recipe.title}</h1>
           <div className="relative">
-            <Image src={recipe.image} alt='food' className="w-[200px] h-[200px] sm:w-[300px] sm:h-[300px]"></Image>
-            <Image src={recipe.authorAvatar} alt='author' className="w-[50px] h-[50px] sm:w-[70px] sm:h-[70px] rounded-full absolute -bottom-4 -right-4"></Image>
+            <Image src={recipe.image} alt='food' className="w-[200px] h-[200px] sm:w-[300px] sm:h-[300px]" 
+              width={300}
+              height={300}
+            />
+            {/* <Image src={recipe.authorAvatar} alt='author' className="w-[50px] h-[50px] sm:w-[70px] sm:h-[70px] rounded-full absolute -bottom-4 -right-4" width={300} height={300} /> */}
           </div>
           <a className="text-md font-light"> recipe by {recipe.author}</a>
           <a className="text-lg font-normal sm:w-[500px]">{recipe.description}</a>
@@ -98,7 +101,7 @@ const RecipeDetails = ({ id }: RecipeDetailsProps) => {
             </div>
             <div className="rounded-full w-[70px] h-[70px] flex items-center justify-center flex-col">
               <BoltIcon/>
-              <a className="text-md text-orange-400">1000000</a>
+              <a className="text-md text-orange-400">{recipe.calories}</a>
               <a className="tex-md text-orange-400">cal</a>
             </div>
           </div>
