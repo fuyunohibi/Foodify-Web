@@ -14,8 +14,13 @@ const AddRecipePage = () => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleSubmit = async (data: RecipeFormData) => {
+    console.log("DATA:", data);
+    console.log("CLICK");
+    console.log("DATA:", data);
+    const authorAvatar = "https://static.wikia.nocookie.net/hellskitchen/images/6/6f/Gordon_Ramsay.jpg/revision/latest/thumbnail/width/360/height/360?cb=20190118190638";
+
     try {
-      const response = await fetch("http://localhost:5000/recipes", {
+      const response = await fetch("http://localhost:5001/recipes", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -23,6 +28,8 @@ const AddRecipePage = () => {
         },
         body: JSON.stringify(data),
       });
+
+      console.log("RESPONSE:", response);
 
       if (!response.ok) {
         const errorData = await response.json();

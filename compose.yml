@@ -6,7 +6,7 @@ services:
       context: ./backend
       dockerfile: flask.dockerfile
     ports:
-      - 5000:5000
+      - 5001:5001
     volumes:
       - ./backend:/app
     depends_on:

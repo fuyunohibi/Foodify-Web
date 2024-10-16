@@ -14,19 +14,7 @@ interface IParams {
   };
 }
 
-interface Recipe {
-  id: number;
-  author: string;
-  authorAvatar: string;
-  calories: number;
-  date: string;
-  description: string;
-  duration: string;
-  image: string;
-  level: string;
-  steps: string[];
-  title: string;
-}
+
 
 interface StepProps {
   text: string;
@@ -55,7 +43,7 @@ const ReceipesPage = ({ params }: IParams) => {
   useEffect(() => {
     const fetchRecipe = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/recipes/${params.id}`);
+        const res = await fetch(`http://localhost:5001/recipes/${params.id}`);
         const data: Recipe = await res.json();
         setRecipe(data);
       } catch (error) {

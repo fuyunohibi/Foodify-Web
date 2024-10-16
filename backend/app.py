@@ -32,7 +32,7 @@ class Recipe(db.Model):
         return {
             "id": self.id,
             "author": self.author,
-            "date": self.date.strftime("%d %B, %Y"),
+            "date": self.date.strftime("%d %B, %Y %H:%M:%S"),
             "title": self.title,
             "description": self.description,
             "level": self.level,
@@ -148,7 +148,7 @@ def get_user(id):
 
 
 @app.route("/users/<int:id>", methods=["PUT"])
-@token_required
+# @token_required
 def update_user(current_user, id):
     user = User.query.get(id)
     if user is None:
@@ -173,7 +173,7 @@ def update_user(current_user, id):
 
 
 @app.route("/users/<int:id>", methods=["DELETE"])
-@token_required
+# @token_required
 def delete_user(current_user, id):
     user = User.query.get(id)
     if user is None:
@@ -197,9 +197,35 @@ def get_recipes():
     return jsonify([recipe.json() for recipe in recipes])
 
 
+# @app.route("/recipes", methods=["POST"])
+# @token_required
+# def add_recipe(current_user):
+#     data = request.json
+#     level = data.get("level")
+#     if level not in ["Easy", "Medium", "Hard"]:
+#         return (
+#             jsonify({"error": "Invalid level. Must be 'Easy', 'Medium', or 'Hard'."}),
+#             400,
+#         )
+
+#     new_recipe = Recipe(
+#         author=current_user.username,  # Use current_user's username
+#         title=data["title"],
+#         description=data["description"],
+#         level=level,
+#         duration=data["duration"],
+#         calories=data["calories"],
+#         image=data["image"],
+#         authorAvatar=data["authorAvatar"],
+#         steps=data["steps"],
+#     )
+#     db.session.add(new_recipe)
+#     db.session.commit()
+#     return jsonify(new_recipe.json())
+  
 @app.route("/recipes", methods=["POST"])
-@token_required
-def add_recipe(current_user):
+# @token_required
+def add_recipe():
     data = request.json
     level = data.get("level")
     if level not in ["Easy", "Medium", "Hard"]:
@@ -209,14 +235,14 @@ def add_recipe(current_user):
         )
 
     new_recipe = Recipe(
-        author=current_user.username,  # Use current_user's username
+        author=data["author"],
         title=data["title"],
         description=data["description"],
         level=level,
         duration=data["duration"],
         calories=data["calories"],
         image=data["image"],
-        authorAvatar=data["authorAvatar"],
+        # authorAvatar=data["authorAvatar"],
         steps=data["steps"],
     )
     db.session.add(new_recipe)
@@ -233,7 +259,7 @@ def get_recipe(id):
 
 
 @app.route("/recipes/<int:id>", methods=["PUT"])
-@token_required
+# @token_required
 def update_recipe(current_user, id):
     recipe = Recipe.query.get(id)
     if recipe is None:
@@ -268,7 +294,7 @@ def update_recipe(current_user, id):
 
 
 @app.route("/recipes/<int:id>", methods=["DELETE"])
-@token_required
+# @token_required
 def delete_recipe(current_user, id):
     recipe = Recipe.query.get(id)
     if recipe is None:

@@ -23,16 +23,39 @@ export default function SignUpForm() {
     e.preventDefault();
     setError("");
 
-    const res = await signIn("credentials", {
-      redirect: false,
-      email,
-      password,
-    });
+    // const res = await signIn("credentials", {
+    //   redirect: false,
+    //   email,
+    //   password,
+    // });
 
-    if (res?.error) {
-      setError("Invalid credentials");
-    } else {
-      window.location.href = "/";
+    // if (res?.error) {
+    //   setError("Invalid credentials");
+    // } else {
+    //   window.location.href = "/";
+    // }
+
+    try {
+      const response = await fetch("http://localhost:5001/auth/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, username, password}),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        setError(errorData.error);
+      } else {
+        const result = await response.json();
+        console.log("User signed up successfully:", result);
+        setError("");
+        window.location.href = "/home";
+      }
+    } catch (error) {
+      console.error("Error signing up:", error);
+      setError("An unexpected error occurred.");
     }
   };
   return (

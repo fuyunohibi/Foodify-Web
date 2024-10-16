@@ -3,9 +3,15 @@
 import Image from "next/image";
 import { Tabs } from "../ui/tabs";
 import FoodCard from "../shared/cards/food-card";
-import { recipes } from "@/constants/recipe";
+// import { recipes } from "@/constants/recipe";
+import { RecipeData } from "@/types/recipe";
 
-export function CategoriesTabs () {
+interface CategoriesTabsProps {
+  recipes: RecipeData[];
+}
+
+export function CategoriesTabs ({ recipes }: CategoriesTabsProps) {
+
   const tabs = [
     {
       title: "All",

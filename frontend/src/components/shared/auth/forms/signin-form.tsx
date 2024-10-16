@@ -13,16 +13,39 @@ export default function SignInForm() {
     e.preventDefault();
     setError("");
 
-    const res = await signIn("credentials", {
-      redirect: false,
-      email,
-      password,
-    });
+    // const res = await signIn("credentials", {
+    //   redirect: false,
+    //   email,
+    //   password,
+    // });
 
-    if (res?.error) {
-      setError("Invalid credentials");
-    } else {
-      window.location.href = "/";
+    // if (res?.error) {
+    //   setError("Invalid credentials");
+    // } else {
+    //   window.location.href = "/";
+    // }
+
+    try {
+      const response = await fetch("http://localhost:5001/auth/signin", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        setError(errorData.error);
+      } else {
+        const result = await response.json();
+        console.log("User logged in successfully:", result);
+        setError("");
+        window.location.href = "/home";
+      }
+    } catch (error) {
+      console.error("Error logging in:", error);
+      setError("An unexpected error occurred.");
     }
   };
   return (

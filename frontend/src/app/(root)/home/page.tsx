@@ -1,13 +1,41 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { CategoriesTabs } from "@/components/ui/categories-tabs";
 import { FloatingDockTabs } from "@/components/ui/floating-dock-tabs";
 import { Logo } from "@/components/ui/logo";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { RecipeData } from "@/types/recipe";
 
 const HomePage = () => {
+  const [recipes, setRecipes] = useState<RecipeData[] | null>(null);
+
+  useEffect(() => {
+    const fetchRecipes = async () => {
+      try {
+        const res = await fetch(`http://localhost:5001/recipes`);
+        const data = await res.json();
+        setRecipes(data);
+      } catch (error) {
+        console.error("Error fetching recipe:", error);
+      }
+    };
+
+    fetchRecipes();
+  }, []);
+
+  if (!recipes) {
+    return <div>Loading...</div>;
+  }
+
+  const sortedRecipes: RecipeData[] = recipes.sort((a: RecipeData, b: RecipeData) => {
+    return a.title.localeCompare(b.title);
+  });
+  console.log("SORTED RECIPES:", sortedRecipes);
+
+  
   return (
     <AuroraBackground>
       <motion.div
@@ -23,7 +51,7 @@ const HomePage = () => {
         <Logo />
         <div className="-mt-[8rem]">
           <p className="text-lg font-bold text-white">Categories</p>
-          <CategoriesTabs />
+          <CategoriesTabs recipes={sortedRecipes} />
         </div>
       </motion.div>
       <FloatingDockTabs />
