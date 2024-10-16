@@ -25,3 +25,10 @@ This is a Flask application for managing recipes. It uses SQLAlchemy for ORM and
     ```sh
     docker-compose up --build
     ```
+
+
+Run front end
+1. cd frontend
+2. docker build -t nextjs:latest -f Dockerfile .
+3. docker build -t nginx:latest -f nginx/Dockerfile nginx
+4. docker-compose up
